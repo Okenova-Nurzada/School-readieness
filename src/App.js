@@ -1,13 +1,15 @@
 import React from 'react';
+import Layout from './components/Layout/Layout';
 import './App.css';
 
-function App() {
+export default() => {
   return (
     <div className="App">
-      NURZADA
-    
+      <Layout>
+      Stationery Builder by Nurzada Okenova
+      </Layout>
     </div>
   );
-}
+};
 
-export default App;
+ 
