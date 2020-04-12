@@ -1,0 +1,10 @@
+.StationeryKit {
+    border: 5px solid rgb(4, 49, 4);
+    background-color: rgb(39, 216, 113);
+    width: 400px;
+    height: 300px;
+    display:flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    overflow: hidden;
+}
