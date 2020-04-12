@@ -4,10 +4,14 @@ import classes from "./StationeryKit.module.css"
 
 export default () => ( 
 <div className={classes.StationeryKit}>
-<Stationery />
-<Stationery />
-<Stationery />
-<Stationery />
+<Stationery  type="book"/>
+<Stationery type="pencil" />
+<Stationery  type="book"/>
+<Stationery type="pencil" />
+<Stationery  type="notebook" />
+<Stationery type="pencil" />
+<Stationery  type="notebook" />
+
 
 
 

@@ -1,8 +1,26 @@
 .Stationery {
     width: 50px;
     height: 50px;
-    background-color: deeppink;
-    border: 2px solid pink;
+    box-sizing: border-box;
+
+}
+.notebook {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(11, 147, 201);
+    border: 2px solid rgb(20, 100, 219);
+  
+}
+.book {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(233, 29, 182);
+    border: 2px solid rgb(212, 186, 191);
+}
+.pencil {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(219, 207, 34);
+    border: 2px solid rgb(212, 186, 191);
     border-radius: 25px;
-    
 }
