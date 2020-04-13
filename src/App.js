@@ -3,14 +3,14 @@ import Layout from './components/Layout/Layout';
 import StationeryBuilder from './containers/StationeryBuilder/StationeryBuilder';
 import './App.css';
 
-export default() => {
+export default () => {
   return (
     <div className="App">
       <Layout>
-     <StationeryBuilder />
+        <StationeryBuilder />
       </Layout>
     </div>
   );
 };
 
- 
+
