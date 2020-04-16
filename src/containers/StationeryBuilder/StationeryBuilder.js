@@ -4,13 +4,17 @@ import StationeryControls from '../../components/StationeryBuilder/StationeryCon
 import classes from './StationeryBuilder.module.css';
 
 export default () => {
-  conts
+
   const [items, setItems] = useState({
-    notebook: 3,
-    pencil: 14,
-    book: 8,
+    notebook: 0,
+    pencil: 0,
+    album: 0,
+    eraser: 0,
+    ruler: 0,
+    scotch: 0,
+
   });
-  const [ price, Setprice] = useState(10)
+  const [price, Setprice] = useState(10)
   function addItems(type) {
     const newItems = { ...items };
     newItems[type]++;
