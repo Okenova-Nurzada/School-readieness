@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo span {
+    font-family: 'Sacramento', cursive;
+    color:white;
+    font-size: 2rem;
+}
