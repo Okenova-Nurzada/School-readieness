@@ -2,12 +2,16 @@
     display: flex;
     flex-flow: column nowrap;
     align-items:center;
-    border: 5px solid rgb(30, 46, 30);
-    background-color: rgb(102, 241, 22);
-    width: 400px;
-    height: 300px;
+
+    border: 1px solid rgb(134, 145, 41); 
     border-radius:10px ;
-    padding-top: .5rem ;
-    padding-left: .5rem ;
+    background-color: rgb(238, 221, 68);
+    width: 270px;
+    height: 380px;
+    padding: 30px;
+    font-family:  'Sacramento', cursive;
+    font-size: large;
+ 
+   
     
 }

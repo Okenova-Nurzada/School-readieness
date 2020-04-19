@@ -4,22 +4,22 @@ import StationeryControls from '../../components/StationeryBuilder/StationeryCon
 import classes from './StationeryBuilder.module.css';
 const PRICES = {
   notebook: 10,
-  pencil: 5,
-  album: 45,
+  pen: 5,
+  sketchbook: 45,
   eraser: 20,
   ruler: 20,
-  scotch: 25,
+  scissors: 25,
 
 }
 export default () => {
 
   const [items, setItems] = useState({
     notebook: 0,
-    pencil: 0,
-    album: 0,
+    pen: 0,
+    sketchbook: 0,
     eraser: 0,
     ruler: 0,
-    scotch: 0,
+    scissors: 0,
 
   });
   const [price, setPrice] = useState(10);

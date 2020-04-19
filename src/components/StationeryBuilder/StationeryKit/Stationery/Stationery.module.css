@@ -2,46 +2,24 @@
     width: 50px;
     height: 50px;
     box-sizing: border-box;
-
+    background-size: contain;
 }
 .notebook {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(11, 147, 201);
-    border: 2px solid rgb(20, 100, 219);
-  
+   background-image: url(../../../../assets/notebook.jpg);
 }
 .eraser {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(233, 29, 182);
-    border: 2px solid rgb(212, 186, 191);
+   background-image: url(../../../../assets/eraser.jpg);
 }
 .ruler {
-    width:20px;
-    height: 30px;
-    background-color: rgb(58, 120, 236);
-    border: 2px solid rgb(233, 34, 74);
-    border-radius: 25px;
+    background-image: url(../../../../assets/ruler.jpg);   
 }
-.pencil {
-    width: 10px;
-    height: 10px;
-    background-color: rgb(219, 207, 34);
-    border: 2px solid rgb(212, 186, 191);
-    border-radius: 25px;
+.pen {
+    background-image: url(../../../../assets/pen.jpg);
 }
-.album {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(56, 219, 34);
-    border: 2px solid rgb(241, 88, 17);
-    border-radius: 25px;
+.sketchbook {
+    background-image: url(../../../../assets/sketchbook.jpg);
+    
 }
-.scotch {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(230, 30, 153);
-    border: 2px solid rgb(34, 26, 22);
-    border-radius: 25px;
+.scissors {
+    background-image: url(../../../../assets/scissors.jpg);
 }

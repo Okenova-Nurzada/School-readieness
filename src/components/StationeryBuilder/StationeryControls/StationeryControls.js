@@ -2,16 +2,18 @@ import React from 'react';
 import classes from './StationeryControls.module.css';
 import StationeryControl from './StationeryControl/StationeryControl';
 const CONTROLS = [
-    { label: "Album", type: "album" },
+    { label: "Sketchbook", type: "sketchbook" },
     { label: "Notebook", type: "notebook" },
-    { label: "Pencil", type: "pencil" },
+    { label: "Pen", type: "pen" },
     { label: "Eraser", type: "eraser" },
     { label: "Ruler", type: "ruler" },
-    { label: "Scotch", type: "scotch" },
+    { label: "Scissors", type: "scissors" },
 ];
 export default ({ items, addItems, removeItems }) => {
 
-    const controlsOutput = CONTROLS.map(control => <StationeryControl control={control}
+    const controlsOutput = CONTROLS.map(control => <StationeryControl
+        key={control.type}
+        control={control}
         addItems={addItems}
         removeItems={removeItems}
         disabled={items[control.type] === 0} />);
