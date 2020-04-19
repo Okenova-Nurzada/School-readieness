@@ -44,10 +44,16 @@ export default () => {
     };
   }
 
+
+
+
+
   return (
     <div className={classes.StationeryBuilder}>
       <StationeryKit price={price} items={items} />
-      <StationeryControls addItems={addItems} removeItems={removeItems} />
+      <StationeryControls items={items}
+        addItems={addItems}
+        removeItems={removeItems} />
     </div>
   );
 };
