@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './StationeryControls.module.css';
 import StationeryControl from './StationeryControl/StationeryControl';
 const CONTROLS = [
-    { label: "Sketchbook", type: "sketchbook" },
+    { label: "Snack", type: "snack" },
     { label: "Notebook", type: "notebook" },
     { label: "Pen", type: "pen" },
     { label: "Eraser", type: "eraser" },

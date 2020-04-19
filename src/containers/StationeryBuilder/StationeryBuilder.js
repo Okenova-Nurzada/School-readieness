@@ -5,7 +5,7 @@ import classes from './StationeryBuilder.module.css';
 const PRICES = {
   notebook: 10,
   pen: 5,
-  sketchbook: 45,
+  snack: 45,
   eraser: 20,
   ruler: 20,
   scissors: 25,
@@ -16,7 +16,7 @@ export default () => {
   const [items, setItems] = useState({
     notebook: 0,
     pen: 0,
-    sketchbook: 0,
+    snack: 0,
     eraser: 0,
     ruler: 0,
     scissors: 0,
