@@ -9,21 +9,21 @@
    
     
 }
+.snack {
+    background-image: url(../../../../assets/snack.jpg.png);
+    
+}
 .notebook {
    background-image: url(../../../../assets/notebook.jpg);
+}
+.pen {
+    background-image: url(../../../../assets/pen.jpg);
 }
 .eraser {
    background-image: url(../../../../assets/eraser.jpg);
 }
 .ruler {
     background-image: url(../../../../assets/ruler.jpg);   
-}
-.pen {
-    background-image: url(../../../../assets/pen.jpg);
-}
-.snack {
-    background-image: url(../../../../assets/snack.jpg.png);
-    
 }
 .scissors {
     background-image: url(../../../../assets/scissors.jpg);

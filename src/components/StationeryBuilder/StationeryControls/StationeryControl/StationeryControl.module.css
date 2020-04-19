@@ -3,6 +3,7 @@
     margin-right: .5rem;
 }
 .StationeryControl .label {
-color:rgb(38, 39, 35);
-
+    color: rgb(53, 48, 48);
+    font-size: x-large;
+    font-family: 'Sacramento', cursive; ;
 }
