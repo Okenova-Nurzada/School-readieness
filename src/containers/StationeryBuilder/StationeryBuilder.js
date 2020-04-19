@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import StationeryKit from '../../components/StationeryBuilder/StationeryKit/StationeryKit';
 import StationeryControls from '../../components/StationeryBuilder/StationeryControls/StationeryControls';
 import classes from './StationeryBuilder.module.css';
+const PRICES = {
+  notebook: 10,
+  pencil: 5,
+  album: 45,
+  eraser: 20,
+  ruler: 20,
+  scotch: 25,
 
+}
 export default () => {
 
   const [items, setItems] = useState({
@@ -14,23 +22,31 @@ export default () => {
     scotch: 0,
 
   });
-  const [price, Setprice] = useState(10)
+  const [price, setPrice] = useState(10);
+
   function addItems(type) {
     const newItems = { ...items };
     newItems[type]++;
     setItems(newItems);
+
+    const newPrice = price + PRICES[type];
+    setPrice(newPrice);
   }
   function removeItems(type) {
     if (items[type] >= 1) {
       const newItems = { ...items };
       newItems[type]--;
       setItems(newItems);
+
+
+      const newPrice = price - PRICES[type];
+      setPrice(newPrice);
     };
   }
 
   return (
     <div className={classes.StationeryBuilder}>
-      <StationeryKit items={items} />
+      <StationeryKit price={price} items={items} />
       <StationeryControls addItems={addItems} removeItems={removeItems} />
     </div>
   );

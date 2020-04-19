@@ -2,7 +2,7 @@ import React from 'react';
 import Stationery from './Stationery/Stationery';
 import classes from "./StationeryKit.module.css";
 
-export default ({ items }) => {
+export default ({ price, items }) => {
     let itemsOutput = [];
 
     Object.keys(items).forEach(type => {
@@ -14,8 +14,12 @@ export default ({ items }) => {
 
     return (
         <div className={classes.StationeryKit}>
-            {itemsOutput}
+            <div className={classes.bento}> {itemsOutput}
+            </div>
+            <div className={classes.price}>  Totoal price {price} som 
+            </div>
         </div>
+
     );
 }
 

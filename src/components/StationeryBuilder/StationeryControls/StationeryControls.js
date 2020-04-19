@@ -12,7 +12,7 @@ const CONTROLS = [
 export default ({ addItems, removeItems }) => {
 
     const controlsOutput = CONTROLS.map(control => <StationeryControl control={control} addItems={addItems} removeItems={removeItems} />);
-    
+
     return (
         <div className={classes.StationeryControls}>
             {controlsOutput}
