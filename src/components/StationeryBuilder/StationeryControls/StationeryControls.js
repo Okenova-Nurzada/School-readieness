@@ -21,6 +21,8 @@ export default ({ items, addItems, removeItems }) => {
     return (
         <div className={classes.StationeryControls}>
             {controlsOutput}
+            <button className={classes.orderButton}>ORDER</button>
         </div>
+
     );
 }

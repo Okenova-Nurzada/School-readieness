@@ -7,10 +7,25 @@
     border-radius:10px ;
     background-color: #eedd44;
     width: 270px;
-    height: 380px;
+    height: 420px;
     padding: 30px;
     
- 
-   
-    
+}
+ .orderButton {
+    height: 150px;
+    width: 93px;
+    border: none;
+    border-radius: 10%;
+    background-color:white;
+    color:#92850e;
+    font-weight: bold;
+    font-family: 'Sacramento', cursive;
+    font-size: 16px;
+  
+}
+.orderButton:disabled {
+    opacity: .5;
+}
+.orderButton:not(:disabled):hover {
+    opacity: .8;
 }
