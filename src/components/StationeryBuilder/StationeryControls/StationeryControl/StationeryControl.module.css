@@ -1,9 +1,29 @@
 .StationeryControl {
+    display: flex;
+    align-items: center;
+
     margin-bottom: .5rem;
     margin-right: .5rem;
 }
 .StationeryControl .label {
     color: rgb(53, 48, 48);
     font-size: x-large;
-    font-family: 'Sacramento', cursive; ;
+    font-family: 'Sacramento', cursive;
+    padding:.4rem 0.5rem ;
+}
+.StationeryControl button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 100%;
+    background-color: white;
+    color:#bbaa10;
+    font-weight: bold;
+    cursor: pointer;
+}
+.StationeryControl button:disabled {
+    opacity: .5;
+}
+.StationeryControl button:not(:disabled):hover {
+    opacity: .8;
 }
