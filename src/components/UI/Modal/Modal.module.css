@@ -1,0 +1,15 @@
+.Modal {
+  width: 90%;
+  padding: 30px;
+  position: absolute;
+  z-index: 500;
+  top: 180px;
+  background-color: white;
+  border: 1 px solid black;
+}
+
+@media (min-width: 500px) {
+  .Modal {
+    width: 500px;
+  }
+}

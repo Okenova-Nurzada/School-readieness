@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import StationeryKit from "../../components/StationeryBuilder/StationeryKit/StationeryKit";
 import StationeryControls from "../../components/StationeryBuilder/StationeryControls/StationeryControls";
+import Modal from "../../components/UI/Modal/Modal";
 import classes from "./StationeryBuilder.module.css";
+import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderSummary";
 const PRICES = {
   notebook: 10,
   pen: 5,
@@ -60,6 +62,9 @@ export default () => {
         addItems={addItems}
         removeItems={removeItems}
       />
+      <Modal>
+        <OrderSummary items={items}  />
+      </Modal>
     </div>
   );
 };
