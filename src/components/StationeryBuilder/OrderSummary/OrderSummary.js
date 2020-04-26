@@ -23,6 +23,7 @@ export default ({ items }) => {
       <h2>Your order!</h2>
       <p>Congratulation! You've built a best stationery of all time!</p>
       <ul>{itemsOutput}</ul>
+      <p>Would you like to checkbot?</p>
     </div>
   );
 };

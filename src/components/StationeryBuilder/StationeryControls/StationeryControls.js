@@ -9,7 +9,7 @@ const CONTROLS = [
   { label: "Ruler", type: "ruler" },
   { label: "Scissors", type: "scissors" },
 ];
-export default ({ items, addItems, removeItems, canOrder }) => {
+export default ({ items, addItems, removeItems, canOrder , startOrder}) => {
   const controlsOutput = CONTROLS.map((control) => (
     <StationeryControl
       key={control.type}
@@ -23,7 +23,11 @@ export default ({ items, addItems, removeItems, canOrder }) => {
   return (
     <div className={classes.StationeryControls}>
       {controlsOutput}
-      <button disabled={!canOrder} className={classes.orderButton}>
+      <button
+        onClick={startOrder}
+        disabled={!canOrder}
+        className={classes.orderButton}
+      >
         ORDER
       </button>
     </div>
