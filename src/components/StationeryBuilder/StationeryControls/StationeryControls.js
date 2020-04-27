@@ -25,13 +25,7 @@ export default ({ items, addItems, removeItems, canOrder, startOrder }) => {
   return (
     <div className={classes.StationeryControls}>
       {controlsOutput}
-      <button
-        onClick={startOrder}
-        disabled={!canOrder}
-        className={classes.orderButton}
-      >
-        ORDER
-      </button>
+     
       <Button click={startOrder} enabled={canOrder}>
         Order
       </Button>
