@@ -1,0 +1,19 @@
+.Button {
+  height: none;
+  width: 93px;
+  border: none;
+  border-radius: 10%;
+  background-color: white;
+  color: #086b08;
+  font-weight: bold;
+  font-family: "Sacramento", cursive;
+  font-size: 16px;
+  padding:  5px 10px;
+  text-transform: uppercase;
+}
+.Button:disabled {
+  opacity: 0.5;
+}
+.Button:not(:disabled):hover {
+  opacity: 0.8;
+}

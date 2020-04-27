@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./StationeryControls.module.css";
 import StationeryControl from "./StationeryControl/StationeryControl";
+import Button from "../../UI/Button/Button";
+
 const CONTROLS = [
   { label: "Pencil", type: "pencil" },
   { label: "Notebook", type: "notebook" },
@@ -9,7 +11,7 @@ const CONTROLS = [
   { label: "Ruler", type: "ruler" },
   { label: "Scissors", type: "scissors" },
 ];
-export default ({ items, addItems, removeItems, canOrder , startOrder}) => {
+export default ({ items, addItems, removeItems, canOrder, startOrder }) => {
   const controlsOutput = CONTROLS.map((control) => (
     <StationeryControl
       key={control.type}
@@ -30,6 +32,9 @@ export default ({ items, addItems, removeItems, canOrder , startOrder}) => {
       >
         ORDER
       </button>
+      <Button click={startOrder} enabled={canOrder}>
+        Order
+      </Button>
     </div>
   );
 };
