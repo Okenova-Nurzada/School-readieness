@@ -1,4 +1,3 @@
-
 .StationeryKit .bento {
   display: flex;
   flex-flow: row wrap;
@@ -19,7 +18,7 @@
   font-family: "Sacramento", cursive;
 }
 @media (min-width: 500px) {
-    .StationeryKit {
-      width: 495px;
-    }
-  } 
+  .StationeryKit {
+    width: 495px;
+  }
+}
