@@ -5,10 +5,11 @@
 .logo img {
     height: 60px;
     width: 60px;
+    margin:10px
 }
 .logo span {
     font-family: 'Sacramento', cursive;
     color:rgb(7, 37, 3);
-    font-size: 2rem;
+    font-size: 2.5rem;
     
 }

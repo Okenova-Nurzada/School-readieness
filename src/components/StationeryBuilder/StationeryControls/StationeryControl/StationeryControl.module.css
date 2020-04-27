@@ -10,11 +10,11 @@
     font-size: xx-large;
 
     font-family: 'Sacramento', cursive;
-    padding:.4rem 0.5rem ;
+    padding:.4rem 1rem ;
 }
 .StationeryControl button {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border: none;
     border-radius: 100%;
     background-color: white;
@@ -27,4 +27,10 @@
 }
 .StationeryControl button:not(:disabled):hover {
     opacity: .8;
+}
+
+@media (min-width:500px) {
+    .StationeryControl.label {
+        font-size: 2rem;
+    }
 }
