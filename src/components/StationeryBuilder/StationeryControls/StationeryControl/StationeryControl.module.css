@@ -7,7 +7,8 @@
 }
 .StationeryControl .label {
     color: rgb(53, 48, 48);
-    font-size: x-large;
+    font-size: xx-large;
+
     font-family: 'Sacramento', cursive;
     padding:.4rem 0.5rem ;
 }
