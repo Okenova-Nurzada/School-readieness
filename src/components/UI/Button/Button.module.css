@@ -1,5 +1,5 @@
 .Button {
-  height: none;
+  height: 30px;
   width: 93px;
   border: none;
   border-radius: 10%;
@@ -20,9 +20,9 @@
 .green {
   background-color: rgb(59, 148, 59);
   color: white;
-  margin-right: 3px;
+  margin-right: 9px;
 }
 .red {
-  background-color: #ec6f31;
+  background-color: #f1390b;
   color: white;
 }
