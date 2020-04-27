@@ -38,6 +38,10 @@ export default () => {
     setIsOrdering(false);
   }
 
+  function finishOrder() {
+    alert("You are on tte checkout page!");
+  }
+
   function addItems(type) {
     const newItems = { ...items };
     newItems[type]++;
@@ -71,7 +75,11 @@ export default () => {
         removeItems={removeItems}
       />
       <Modal show={isOrdering} hideCallback={cancelOrder}>
-        <OrderSummary items={items} />
+        <OrderSummary
+          items={items}
+          finishOrder={finishOrder}
+          cancelOrder={cancelOrder}
+        />
       </Modal>
     </div>
   );

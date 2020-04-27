@@ -11,7 +11,7 @@ const LABELS = {
   scissors: "Scissors",
 };
 
-export default ({ items }) => {
+export default ({ items, cancelOrder, finishOrder }) => {
   const itemsOutput = Object.keys(items)
     .filter((item) => items[item] > 0)
     .map((item) => (
@@ -25,9 +25,12 @@ export default ({ items }) => {
       <p>Congratulation! You've built a best stationery of all time!</p>
       <ul>{itemsOutput}</ul>
       <p>Would you like to checkbot?</p>
-      <Button >Checkout</Button>
-      <Button>Cancel</Button>
-     
+      <Button click={finishOrder} green>
+        Checkout
+      </Button>
+      <Button click={cancelOrder} red>
+        Cancel
+      </Button>
     </div>
   );
 };

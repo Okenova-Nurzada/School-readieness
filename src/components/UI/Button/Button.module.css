@@ -8,7 +8,7 @@
   font-weight: bold;
   font-family: "Sacramento", cursive;
   font-size: 16px;
-  padding:  5px 10px;
+  padding: 5px 10px;
   text-transform: uppercase;
 }
 .Button:disabled {
@@ -16,4 +16,13 @@
 }
 .Button:not(:disabled):hover {
   opacity: 0.8;
+}
+.green {
+  background-color: rgb(59, 148, 59);
+  color: white;
+  margin-right: 3px;
+}
+.red {
+  background-color: #ec6f31;
+  color: white;
 }
