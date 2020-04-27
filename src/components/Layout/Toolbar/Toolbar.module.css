@@ -1,7 +1,7 @@
 .Toolbar {
   display: flex;
   justify-content: space-between;
-  min-height: 40px;
+  min-height: 30px;
 
   background-color: rgb(188, 241, 90);
 }
