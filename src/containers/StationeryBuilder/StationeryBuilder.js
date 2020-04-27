@@ -7,7 +7,7 @@ import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderS
 const PRICES = {
   notebook: 10,
   pen: 5,
-  snack: 45,
+  pencil: 10,
   eraser: 20,
   ruler: 20,
   scissors: 25,
@@ -16,7 +16,7 @@ export default () => {
   const [items, setItems] = useState({
     notebook: 0,
     pen: 0,
-    snack: 0,
+    pencil: 0,
     eraser: 0,
     ruler: 0,
     scissors: 0,
