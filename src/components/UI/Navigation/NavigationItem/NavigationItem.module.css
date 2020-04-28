@@ -2,21 +2,28 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  height: 70px;
+  height: 80px;
 
   font-family: "Sacramento", cursive;
   text-decoration: none;
   color: rgb(20, 20, 20);
   font-size: 1.8rem;
-  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
 
   transition: all 0.2s ease-in-out;
 }
 .NavigationItem a:hover {
-  border-top-color: white;
+  border-color: white;
   background-color: rgba(255, 255, 255, 0.3);
 }
 .NavigationItem .active {
-  border-top-color: white;
+  border-color: white;
   background-color: rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 500px) {
+  .NavigationItem a {
+    height: 70px;
+    border: none;
+    border-top: 5px solid transparent;
+  }
 }
