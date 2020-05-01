@@ -3,7 +3,7 @@ import Button from "../../UI/Button/Button";
 import classes from "./OrderSummary.module.css";
 
 const LABELS = {
-  snack: "Snack",
+  pencil: "Pencil",
   notebook: "Notebook",
   pen: "Pen",
   eraser: "Eraser",
