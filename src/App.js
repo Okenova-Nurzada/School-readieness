@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from "./components/Layout/Layout";
-import StationeryBuilder from './containers/StationeryBuilder/StationeryBuilder';
-import './App.css';
+import React from "react";
+import Layout from "./containers/Layout/Layout";
+import StationeryBuilder from "./containers/StationeryBuilder/StationeryBuilder";
+import "./App.css";
 
 export default () => {
   return (
@@ -12,5 +12,3 @@ export default () => {
     </div>
   );
 };
-
-
