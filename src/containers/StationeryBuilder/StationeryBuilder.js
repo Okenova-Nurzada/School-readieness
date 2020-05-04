@@ -24,6 +24,7 @@ export default () => {
   const [price, setPrice] = useState(10);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function checkCanOrder(items) {
     const total = Object.keys(items).reduce((total, item) => {
@@ -64,6 +65,18 @@ export default () => {
     }
   }
 
+  let orderSummary = "Loading...";
+  if (!loading) {
+    orderSummary = (
+      <OrderSummary
+        items={items}
+        finishOrder={finishOrder}
+        cancelOrder={cancelOrder}
+        price={price}
+      />
+    );
+  }
+
   return (
     <div className={classes.StationeryBuilder}>
       <StationeryKit price={price} items={items} />
@@ -75,11 +88,7 @@ export default () => {
         removeItems={removeItems}
       />
       <Modal show={isOrdering} hideCallback={cancelOrder}>
-        <OrderSummary
-          items={items}
-          finishOrder={finishOrder}
-          cancelOrder={cancelOrder}
-        />
+       {OrderSummary}
       </Modal>
     </div>
   );
