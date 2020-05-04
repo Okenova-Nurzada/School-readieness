@@ -29,3 +29,10 @@
     background-image: url(../../../../assets/scissors.jpg);
 }
 
+@media (min-width: 900px) {
+    .Sushi {
+      width: 70px;
+      height: 62px;
+      margin-top: -50px;
+    }
+  } 

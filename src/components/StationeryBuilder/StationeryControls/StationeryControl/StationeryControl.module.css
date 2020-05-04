@@ -30,7 +30,7 @@
 }
 
 @media (min-width:500px) {
-    .StationeryControl.label {
+    .StationeryControl .label {
         font-size: 2rem;
     }
 }
