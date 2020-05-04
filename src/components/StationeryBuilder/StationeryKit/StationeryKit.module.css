@@ -1,4 +1,7 @@
+.StationeryKit {
+  background-image: url(../../../assets/desk.jpg);
 
+}
 .StationeryKit .price {
   font-size: 2rem;
   font-weight: bold;
