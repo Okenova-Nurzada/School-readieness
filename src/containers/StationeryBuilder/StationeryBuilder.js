@@ -4,6 +4,7 @@ import StationeryControls from "../../components/StationeryBuilder/StationeryCon
 import Modal from "../../components/UI/Modal/Modal";
 import classes from "./StationeryBuilder.module.css";
 import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderSummary";
+import Spinner from "../../components/UI/Spinner/Spinner";
 const PRICES = {
   notebook: 10,
   pen: 5,
@@ -65,7 +66,7 @@ export default () => {
     }
   }
 
-  let orderSummary = "Loading...";
+  let orderSummary = <Spinner />;
   if (!loading) {
     orderSummary = (
       <OrderSummary
@@ -88,7 +89,7 @@ export default () => {
         removeItems={removeItems}
       />
       <Modal show={isOrdering} hideCallback={cancelOrder}>
-       {OrderSummary}
+        {OrderSummary}
       </Modal>
     </div>
   );
