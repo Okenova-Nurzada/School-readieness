@@ -1,36 +1,36 @@
 .StationeryControl {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    margin-bottom: .5rem;
-    margin-right: .5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 .StationeryControl .label {
-    color: rgb(53, 48, 48);
-    font-size: xx-large;
+  color: rgb(53, 48, 48);
+  font-size: xx-large;
 
-    font-family: 'Sacramento', cursive;
-    padding:.4rem 1rem ;
+  font-family: "Sacramento", cursive;
+  padding: 0.4rem 1rem;
 }
 .StationeryControl button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 100%;
-    background-color: white;
-    color:#bbaa10;
-    font-weight: bold;
-    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  background-color: white;
+  color: #bbaa10;
+  font-weight: bold;
+  cursor: pointer;
 }
 .StationeryControl button:disabled {
-    opacity: .5;
+  opacity: 0.5;
 }
 .StationeryControl button:not(:disabled):hover {
-    opacity: .8;
+  opacity: 0.8;
 }
 
-@media (min-width:500px) {
-    .StationeryControl .label {
-        font-size: 2rem;
-    }
+@media (min-width: 500px) {
+  .StationeryControl .label {
+    font-size: 2rem;
+  }
 }

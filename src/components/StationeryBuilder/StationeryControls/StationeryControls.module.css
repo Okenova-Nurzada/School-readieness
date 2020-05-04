@@ -1,13 +1,12 @@
 .StationeryControls {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items:center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 
-    border: 1px solid rgb(134, 145, 41); 
-    border-radius:10px ;
-    background-color: #b2ee44;
-    
-    padding: 1rem 2rem;
-    margin: 0 .5rem;
-    
+  border: 1px solid rgb(134, 145, 41);
+  border-radius: 10px;
+  background-color: #b2ee44;
+
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
 }

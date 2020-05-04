@@ -3,8 +3,8 @@ import classes from "./DrawerToggle.module.css";
 
 export default ({ toggleDrawer }) => (
   <div clasaName={classes.DrawerToggle} onClick={toggleDrawer}>
-   <div></div>
-   <div></div>
-   <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 );

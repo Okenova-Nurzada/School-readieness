@@ -11,7 +11,7 @@ export default ({ toggleDrawer, open }) => {
   return (
     <div className={classes.Drawer}>
       <Backdrop hideCallback={toggleDrawer} show={open} />
-      <div className={contentClasses.join(' ')}>
+      <div className={contentClasses.join(" ")}>
         <Logo />
         <Navigation />
       </div>

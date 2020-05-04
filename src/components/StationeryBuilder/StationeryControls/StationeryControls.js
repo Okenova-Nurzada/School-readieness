@@ -25,7 +25,7 @@ export default ({ items, addItems, removeItems, canOrder, startOrder }) => {
   return (
     <div className={classes.StationeryControls}>
       {controlsOutput}
-     
+
       <Button click={startOrder} enabled={canOrder}>
         Order
       </Button>
