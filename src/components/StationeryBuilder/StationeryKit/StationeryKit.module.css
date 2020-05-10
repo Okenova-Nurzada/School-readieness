@@ -1,16 +1,17 @@
 .StationeryKit {
-  background: url(../../../assets/desk.jpg) no-repeat;
+  background: url(../../../assets/desk-1.jpg) no-repeat;
 }
 .StationeryKit {
-  background-image: url(../../../assets/desk.jpg);
+  background-image: url(../../../assets/desk-1.jpg);
+
 }
 .StationeryKit .price {
   font-size: 2rem;
   font-weight: bold;
   font-family: "Sacramento", cursive;
 }
-@media (min-width: 500px) {
+@media (min-width:840px) {
   .StationeryKit {
-    width: 500px;
+    width:840px;
   }
 }
