@@ -5,6 +5,7 @@ import Modal from "../../components/UI/Modal/Modal";
 import classes from "./StationeryBuilder.module.css";
 import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderSummary";
 import axios from "../../axios";
+import Spinner from "../../components/UI/Spinner/Spinner";
 const PRICES = {
   notebook: 10,
   pen: 5,
@@ -25,7 +26,7 @@ export default () => {
   const [price, setPrice] = useState(10);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
 
   function checkCanOrder(items) {
     const total = Object.keys(items).reduce((total, item) => {
@@ -54,7 +55,11 @@ export default () => {
         },
       },
     };
-    axios.post("/orders.json", order).then((response)=> console.log(response));
+    setLoading(true);
+    axios.post("/orders.json", order).then((response) => {
+      setLoading(false);
+      setIsOrdering(false);
+    });
   }
 
   function addItems(type) {
@@ -78,7 +83,18 @@ export default () => {
       setPrice(newPrice);
     }
   }
-  
+
+  let orderSummary = <Spinner />;
+  if (!loading) {
+    orderSummary = (
+      <OrderSummary
+        items={items}
+        finishOrder={finishOrder}
+        cancelOrder={cancelOrder}
+        price={price}
+      />
+    );
+  }
   return (
     <div className={classes.StationeryBuilder}>
       <StationeryKit price={price} items={items} />
@@ -90,12 +106,7 @@ export default () => {
         removeItems={removeItems}
       />
       <Modal show={isOrdering} hideCallback={cancelOrder}>
-      <OrderSummary
-         items={items}
-          finishOrder={finishOrder}
-          cancelOrder={cancelOrder}
-          price={price}
-        />
+        {orderSummary}
       </Modal>
     </div>
   );
