@@ -6,6 +6,7 @@ import classes from "./StationeryBuilder.module.css";
 import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderSummary";
 import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 const PRICES = {
   notebook: 10,
   pen: 5,
@@ -14,7 +15,7 @@ const PRICES = {
   ruler: 20,
   scissors: 25,
 };
-export default () => {
+export default withErrorHandler(() => {
   const [items, setItems] = useState({
     notebook: 0,
     pen: 0,
@@ -56,7 +57,7 @@ export default () => {
       },
     };
     setLoading(true);
-    axios.post("/orders.json", order).then((response) => {
+    axios.post("/orders", order).then((response) => {
       setLoading(false);
       setIsOrdering(false);
     });
@@ -110,4 +111,4 @@ export default () => {
       </Modal>
     </div>
   );
-};
+}, axios);

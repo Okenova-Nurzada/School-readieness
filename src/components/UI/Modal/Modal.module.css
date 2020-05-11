@@ -1,6 +1,7 @@
 .Modal {
   width: 90%;
   padding: 30px;
+  left: 50%;
   position: fixed;
   z-index: 500;
   top: 180px;
@@ -15,8 +16,10 @@
   opacity: 1;
   transform: translateY(0);
 }
-@media (min-width: 500px) {
+@media (min-width: 400px) {
   .Modal {
     width: 500px;
+    transform:translateX(-250px) ;
+
   }
 }
