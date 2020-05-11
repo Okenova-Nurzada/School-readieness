@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StationeryKit from "../../components/StationeryBuilder/StationeryKit/StationeryKit";
 import StationeryControls from "../../components/StationeryBuilder/StationeryControls/StationeryControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -16,14 +16,7 @@ const PRICES = {
   scissors: 25,
 };
 export default withErrorHandler(() => {
-  const [items, setItems] = useState({
-    notebook: 0,
-    pen: 0,
-    pencil: 0,
-    eraser: 0,
-    ruler: 0,
-    scissors: 0,
-  });
+  const [items, setItems] = useState(null);
   const [price, setPrice] = useState(10);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
@@ -85,6 +78,26 @@ export default withErrorHandler(() => {
     }
   }
 
+  useEffect(() => {
+    axios.get("/items.json").then((response) => setItems(response.data));
+  }, []);
+
+  let output = <Spinner />;
+  if (items) {
+    output = (
+      <>
+        <StationeryKit price={price} items={items} />
+        <StationeryControls
+          startOrder={startOrder}
+          canOrder={canOrder}
+          items={items}
+          addItems={addItems}
+          removeItems={removeItems}
+        />
+      </>
+    );
+  }
+
   let orderSummary = <Spinner />;
   if (isOrdering && !loading) {
     orderSummary = (
@@ -96,16 +109,10 @@ export default withErrorHandler(() => {
       />
     );
   }
+
   return (
     <div className={classes.StationeryBuilder}>
-      <StationeryKit price={price} items={items} />
-      <StationeryControls
-        startOrder={startOrder}
-        items={items}
-        canOrder={canOrder}
-        addItems={addItems}
-        removeItems={removeItems}
-      />
+      {output}
       <Modal show={isOrdering} hideCallback={cancelOrder}>
         {orderSummary}
       </Modal>
