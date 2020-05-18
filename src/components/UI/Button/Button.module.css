@@ -20,9 +20,10 @@
 .green {
   background-color: rgb(59, 148, 59);
   color: white;
-  margin-right: 9px;
+  border-radius: 10px;
 }
 .red {
-  background-color: #f1390b;
+  background-color: #cf2f07;
   color: white;
+  border-radius: 10px;
 }
