@@ -22,6 +22,7 @@ export default withErrorHandler(() => {
   const [isOrdering, setIsOrdering] = useState(false);
   const [loading, setLoading] = useState(false);
 
+
   function checkCanOrder(items) {
     const total = Object.keys(items).reduce((total, item) => {
       return total + items[item];

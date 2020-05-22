@@ -4,6 +4,20 @@
 .StationeryKit {
   background-image: url(../../../assets/desk-1.jpg);
 
+
+}
+.bento {
+  position: relative;
+  top :50px;
+  left : -180px;
+  border-left: 10px solid transparent;
+  border-right:200px solid transparent;
+  border-bottom: 450px solid transparent;
+  width: 0;
+  height: 0;
+  transform: rotate(-100deg);
+
+
 }
 .StationeryKit .price {
   font-size: 2rem;

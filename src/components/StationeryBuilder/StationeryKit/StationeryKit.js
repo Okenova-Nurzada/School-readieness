@@ -13,7 +13,9 @@ export default ({ price, items }) => {
 
   return (
     <div className={classes.StationeryKit}>
+      
       <div className={classes.bento}> {itemsOutput}</div>
+
       <div className={classes.price}> Total price {price} som</div>
     </div>
   );
