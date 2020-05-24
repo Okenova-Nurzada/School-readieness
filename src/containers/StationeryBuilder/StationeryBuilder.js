@@ -80,7 +80,9 @@ export default withErrorHandler(() => {
   }
 
   useEffect(() => {
-    axios.get("/items.json").then((response) => setItems(response.data));
+    axios.get("/items.json")
+     .then((response) => setItems(response.data))
+    .catch((error) => {});
   }, []);
 
   let output = <Spinner />;

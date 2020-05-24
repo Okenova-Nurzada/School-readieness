@@ -18,10 +18,9 @@ const withErrorHandler = (WrappedComponent, axios) => {
         (response) => response,
         (error) => setError(error)
       );
-
       return () => {
-        axios.interceptors.request.detach(requestInterceptor);
-        axios.interceptors.response.detach(responseInterceptor);
+        axios.interceptors.request.eject(requestInterceptor);
+        axios.interceptors.response.eject(responseInterceptor);
       };
     }, []);
 
