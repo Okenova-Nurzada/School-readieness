@@ -1,8 +1,8 @@
-.NavigationItem a {
+.NavItem a {
   display: flex;
   align-items: center;
   padding: 1rem;
-  height: 80px;
+  margin: 0;
 
   font-family: "Sacramento", cursive;
   text-decoration: none;
@@ -12,18 +12,18 @@
 
   transition: all 0.2s ease-in-out;
 }
-.NavigationItem a:hover {
+.NavItem a:hover {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.3);
 }
-.NavigationItem .active {
+.NavItem .active {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.1);
 }
 @media (min-width: 500px) {
-  .NavigationItem a {
-    height: 70px;
+  .NavItem a {
+    height: 59.5px;
     border: none;
-    border-top: 5px solid transparent;
+    border-top: 0.1px solid transparent;
   }
 }
