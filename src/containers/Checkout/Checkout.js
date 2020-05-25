@@ -14,7 +14,7 @@ export default () => {
     if (key === "price") {
       price = +value;
     } else {
-     items[key] = +value;
+      items[key] = +value;
     }
   });
 
