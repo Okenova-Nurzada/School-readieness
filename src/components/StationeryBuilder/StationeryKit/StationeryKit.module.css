@@ -1,9 +1,10 @@
 .StationeryKit {
-  background: url(../../../assets/desk-1.jpg) no-repeat;
-  background-size: 80%;
+  background: url(../../../assets/Desk.jpg) no-repeat;
+  background-size: 60%;
+  margin-top: 50px;
 }
 .StationeryKit {
-  background-image: url(../../../assets/desk-1.jpg);
+  background-image: url(../../../assets/Desk.jpg);
 
 
 }
@@ -15,8 +16,8 @@
   border-right:200px solid transparent;
   border-bottom: 450px solid transparent;
   width: 400px;
-  height: 400px;
-  transform: rotate(-100deg);
+  height:0px;
+  transform: rotate(60-deg);
 
 
 }
