@@ -1,20 +1,35 @@
 import * as actions from "./actions";
 
 const initialState = {
-  items: null,
+  items: {
+    pen: 1,
+    notebook: 1,
+    pencil: 1,
+    ruler: 1,
+    scissors: 1,
+    eraser: 1,
+  },
   price: 100,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case actions.ADD_ITEM:
-      console.log("item added");
-      return state;
-
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.item]: state.items[action.item] + 1,
+        },
+      };
     case actions.REMOVE_ITEM:
-      console.log("item removed");
-      return state;
-
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.item]: state.items[action.item] - 1,
+        },
+      };
     default:
       return state;
   }

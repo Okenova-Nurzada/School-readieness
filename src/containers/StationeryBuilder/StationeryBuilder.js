@@ -8,6 +8,7 @@ import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderS
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import classes from "./StationeryBuilder.module.css";
+import { useSelector } from "react-redux";
 const PRICES = {
   notebook: 10,
   pen: 5,
@@ -17,7 +18,8 @@ const PRICES = {
   scissors: 25,
 };
 export default withErrorHandler(() => {
-  const [items, setItems] = useState(null);
+  const { items } = useSelector((state) => state);
+
   const [price, setPrice] = useState(10);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
@@ -50,7 +52,7 @@ export default withErrorHandler(() => {
   function addItems(type) {
     const newItems = { ...items };
     newItems[type]++;
-    setItems(newItems);
+    //setItems(newItems);
     checkCanOrder(newItems);
 
     const newPrice = price + PRICES[type];
@@ -61,21 +63,21 @@ export default withErrorHandler(() => {
     if (items[type] >= 1) {
       const newItems = { ...items };
       newItems[type]--;
-      setItems(newItems);
+      //setItems(newItems);
       checkCanOrder(newItems);
 
       const newPrice = price - PRICES[type];
       setPrice(newPrice);
     }
   }
-
+  /*
   useEffect(() => {
     axios
       .get("/items.json")
       .then((response) => setItems(response.data))
       .catch((error) => {});
   }, []);
-
+*/
   let output = <Spinner />;
   if (items) {
     output = (
