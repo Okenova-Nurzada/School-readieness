@@ -19,17 +19,6 @@ export default withErrorHandler(() => {
     return !canOrder ? number > 0 : canOrder;
   }, false);
 
-  function finishOrder() {
-    const queryParams = Object.keys(items).map(
-      (item) => encodeURIComponent(item) + "=" + encodeURIComponent(items[item])
-    );
-    queryParams.push("price=" + encodeURIComponent(price.toFixed(2)));
-    history.push({
-      pathname: "/checkout",
-      search: queryParams.join("&"),
-    });
-  }
-
   /*
   useEffect(() => {
     axios
@@ -57,7 +46,7 @@ export default withErrorHandler(() => {
     orderSummary = (
       <OrderSummary
         items={items}
-        finishOrder={finishOrder}
+        finishOrder={() => history.push("/checkout")}
         canOrder={() => setIsOrdering(false)}
         price={price}
       />
@@ -67,7 +56,7 @@ export default withErrorHandler(() => {
   return (
     <div className={classes.StationeryBuilder}>
       {output}
-      <Modal show={isOrdering} hideCallback={canOrder}>
+      <Modal show={isOrdering} hideCallback={() => setIsOrdering(false)}>
         {orderSummary}
       </Modal>
     </div>
