@@ -9,18 +9,9 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import classes from "./StationeryBuilder.module.css";
 import { useSelector } from "react-redux";
-const PRICES = {
-  notebook: 10,
-  pen: 5,
-  pencil: 10,
-  eraser: 20,
-  ruler: 20,
-  scissors: 25,
-};
-export default withErrorHandler(() => {
-  const { items } = useSelector((state) => state);
 
-  const [price, setPrice] = useState(10);
+export default withErrorHandler(() => {
+  const { items, price } = useSelector((state) => state);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
@@ -55,8 +46,8 @@ export default withErrorHandler(() => {
     //setItems(newItems);
     checkCanOrder(newItems);
 
-    const newPrice = price + PRICES[type];
-    setPrice(newPrice);
+    // const newPrice = price + PRICES[type];
+    // setPrice(newPrice);
   }
 
   function removeItems(type) {
@@ -66,8 +57,8 @@ export default withErrorHandler(() => {
       //setItems(newItems);
       checkCanOrder(newItems);
 
-      const newPrice = price - PRICES[type];
-      setPrice(newPrice);
+      // const newPrice = price - PRICES[type];
+      // setPrice(newPrice);
     }
   }
   /*
