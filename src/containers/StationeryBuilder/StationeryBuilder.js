@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../../axios";
 import StationeryKit from "../../components/StationeryBuilder/StationeryKit/StationeryKit";
@@ -12,22 +12,12 @@ import { useSelector } from "react-redux";
 
 export default withErrorHandler(() => {
   const { items, price } = useSelector((state) => state);
-  const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
 
-  function checkCanOrder(items) {
-    const total = Object.keys(items).reduce((total, item) => {
-      return total + items[item];
-    }, 0);
-    setCanOrder(total > 0);
-  }
-  function startOrder() {
-    setIsOrdering(true);
-  }
-  function cancelOrder() {
-    setIsOrdering(false);
-  }
+  const canOrder = Object.values(items).reduce((canOrder, number) => {
+    return !canOrder ? number > 0 : canOrder;
+  }, false);
 
   function finishOrder() {
     const queryParams = Object.keys(items).map(
@@ -40,27 +30,6 @@ export default withErrorHandler(() => {
     });
   }
 
-  function addItems(type) {
-    const newItems = { ...items };
-    newItems[type]++;
-    //setItems(newItems);
-    checkCanOrder(newItems);
-
-    // const newPrice = price + PRICES[type];
-    // setPrice(newPrice);
-  }
-
-  function removeItems(type) {
-    if (items[type] >= 1) {
-      const newItems = { ...items };
-      newItems[type]--;
-      //setItems(newItems);
-      checkCanOrder(newItems);
-
-      // const newPrice = price - PRICES[type];
-      // setPrice(newPrice);
-    }
-  }
   /*
   useEffect(() => {
     axios
@@ -75,11 +44,9 @@ export default withErrorHandler(() => {
       <>
         <StationeryKit price={price} items={items} />
         <StationeryControls
-          startOrder={startOrder}
+          startOrder={() => setIsOrdering(true)}
           canOrder={canOrder}
           items={items}
-          addItems={addItems}
-          removeItems={removeItems}
         />
       </>
     );
@@ -91,7 +58,7 @@ export default withErrorHandler(() => {
       <OrderSummary
         items={items}
         finishOrder={finishOrder}
-        cancelOrder={cancelOrder}
+        cancelOrder={() => setIsOrdering(false)}
         price={price}
       />
     );

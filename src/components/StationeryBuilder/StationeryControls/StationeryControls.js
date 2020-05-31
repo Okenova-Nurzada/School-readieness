@@ -11,13 +11,11 @@ const CONTROLS = [
   { label: "Ruler", type: "ruler" },
   { label: "Scissors", type: "scissors" },
 ];
-export default ({ items, addItems, removeItems, canOrder, startOrder }) => {
+export default ({ canOrder, items, startOrder }) => {
   const controlsOutput = CONTROLS.map((control) => (
     <StationeryControl
       key={control.type}
       control={control}
-      addItems={addItems}
-      removeItems={removeItems}
       disabled={items[control.type] === 0}
     />
   ));

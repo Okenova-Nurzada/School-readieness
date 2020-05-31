@@ -3,7 +3,7 @@ import classes from "./StationeryControl.module.css";
 import { useDispatch } from "react-redux";
 import { ADD_ITEM, REMOVE_ITEM } from "../../../../store/actions";
 
-export default ({ control, removeItem, addItem, disabled }) => {
+export default ({ control, disabled }) => {
   const dispatch = useDispatch();
 
   return (
