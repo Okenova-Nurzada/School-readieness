@@ -58,7 +58,7 @@ export default withErrorHandler(() => {
       <OrderSummary
         items={items}
         finishOrder={finishOrder}
-        cancelOrder={() => setIsOrdering(false)}
+        canOrder={() => setIsOrdering(false)}
         price={price}
       />
     );
@@ -67,7 +67,7 @@ export default withErrorHandler(() => {
   return (
     <div className={classes.StationeryBuilder}>
       {output}
-      <Modal show={isOrdering} hideCallback={cancelOrder}>
+      <Modal show={isOrdering} hideCallback={canOrder}>
         {orderSummary}
       </Modal>
     </div>
