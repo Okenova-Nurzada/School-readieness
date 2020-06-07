@@ -1,13 +1,15 @@
-.logo {
+.Logo {
   display: flex;
   align-items: center;
 }
-.logo img {
-  height: 60px;
-  width: 70px;
-  margin: 4px;
+
+.Logo img {
+  margin: 10px;
+  height: 50px;
+  width: 50px;
 }
-.logo span {
+
+.Logo span {
   font-family: "Sacramento", cursive;
   color: rgb(7, 37, 3);
   font-size: 2.5rem;
