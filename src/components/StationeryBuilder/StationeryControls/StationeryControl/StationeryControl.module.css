@@ -1,13 +1,10 @@
 .StationeryControl {
   display: flex;
   align-items: center;
-
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
 }
 .StationeryControl .label {
   color: rgb(53, 48, 48);
-  font-size: xx-large;
+  font-size: 1.8rem;
 
   font-family: "Sacramento", cursive;
   padding: 0.4rem 1rem;
@@ -17,8 +14,8 @@
   height: 30px;
   border: none;
   border-radius: 100%;
-  background-color: white;
-  color: #bbaa10;
+  background-color: #af5ef1;
+  color: black;
   font-weight: bold;
   cursor: pointer;
 }

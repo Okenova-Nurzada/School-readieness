@@ -1,35 +1,34 @@
 .Stationery {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   box-sizing: border-box;
-  background-size: contain;
+  margin-top: -30px;
 
-  margin-right: 0.2rem;
-  margin-bottom: 0.2rem;
+  background-repeat: no-repeat;
 }
 .pencil {
-  background-image: url(../../../../assets/pencil.jpg);
+  background-image: url(../../../../assets/pencil-svgrepo-com.svg);
 }
 .notebook {
-  background-image: url(../../../../assets/notebook.jpg);
+  background-image: url(../../../../assets/notebook-svgrepo-com.svg);
 }
 .pen {
-  background-image: url(../../../../assets/pen.jpg);
+  background-image: url(../../../../assets/pen-svgrepo-com.svg);
 }
 .eraser {
-  background-image: url(../../../../assets/eraser.jpg);
+  background-image: url(../../../../assets/eraser-svgrepo-com.svg);
 }
 .ruler {
-  background-image: url(../../../../assets/ruler.jpg);
+  background-image: url(../../../../assets/ruler-tools-and-utensils-svgrepo-com.svg);
 }
 .scissors {
-  background-image: url(../../../../assets/scissors.jpg);
+  background-image: url(../../../../assets/scissors-svgrepo-com.svg);
 }
 
 @media (min-width: 900px) {
-  .Sushi {
-    width: 70px;
-    height: 62px;
-    margin-top: -50px;
+  .Stationery {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
   }
 }
