@@ -1,12 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .Toolbar {
   display: flex;
   justify-content: space-between;
   min-height: 30px;
-
+  
   background-color: #bcf15a;
 }
 .Toolbar nav {
   display: none;
+  
 }
 @media (min-width: 500px) {
   .Toolbar nav {
