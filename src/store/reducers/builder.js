@@ -1,14 +1,7 @@
 import * as types from "../actions/types";
 
 const initialState = {
-  items: {
-    pencil: { quantity: 1, price: 10, label: "Pencil" },
-    notebook: { quantity: 1, price: 20, label: "Notebook" },
-    pen: { quantity: 1, price: 8, label: "Pen" },
-    eraser: { quantity: 1, price: 15, label: "Eraser" },
-    ruler: { quantity: 1, price: 15, label: "Ruler" },
-   scissors: { quantity: 1, price: 30, label: "Scissors" },
-  },
+  items: null,
   price: 100,
 };
 
@@ -39,6 +32,13 @@ export default (state = initialState, action) => {
           },
         },
       };
+      case types.SET_ITEMS:
+        return {
+          ...state,
+          items: action.items,
+        };
+  
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../../axios";
 import StationeryKit from "../../components/StationeryBuilder/StationeryKit/StationeryKit";
@@ -8,27 +8,26 @@ import OrderSummary from "../../components/StationeryBuilder/OrderSummary/OrderS
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import classes from "./StationeryBuilder.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { load } from "../../store/actions/builder";
 
 export default withErrorHandler(() => {
   const { items, price } = useSelector((state) => state);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const canOrder = Object.values(items).reduce((canOrder, item) => {
-    return !canOrder ? item.quantity > 0 : canOrder;
-  }, false);
-
-  /*
   useEffect(() => {
-    axios
-      .get("/items.json")
-      .then((response) => setItems(response.data))
-      .catch((error) => {});
-  }, []);
-*/
+  
+  load(dispatch);
+}, [dispatch]);
+  
   let output = <Spinner />;
   if (items) {
+    const canOrder = Object.values(items).reduce((canOrder,item) => {
+      return !canOrder ? item.quantity > 0 : canOrder;
+    }, false);
+
     output = (
       <>
         <StationeryKit price={price} items={items} />
@@ -37,28 +36,23 @@ export default withErrorHandler(() => {
           canOrder={canOrder}
           items={items}
         />
+         <Modal show={isOrdering} hideCallback={() => setIsOrdering(false)}>
+          <OrderSummary
+            items={items}
+            finishOrder={() => history.push("/checkout")}
+            cancelOrder={() => setIsOrdering(false)}
+            price={price}
+            />
+        </Modal>
       </>
     );
   }
 
-  let orderSummary = <Spinner />;
-  if (isOrdering) {
-    orderSummary = (
-      <OrderSummary
-        items={items}
-        finishOrder={() => history.push("/checkout")}
-        canOrder={() => setIsOrdering(false)}
-        price={price}
-      />
-    );
-  }
 
   return (
     <div className={classes.StationeryBuilder}>
       {output}
-      <Modal show={isOrdering} hideCallback={() => setIsOrdering(false)}>
-        {orderSummary}
-      </Modal>
+     
     </div>
   );
 }, axios);
