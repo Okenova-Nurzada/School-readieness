@@ -13,12 +13,12 @@
 .Order .price {
   font-weight: bold;
   font-size: 2rem;
-  color: #bcf15a;
+  color: #8964af;
   font-family: "Sacramento", cursive;
   margin-bottom: 0.5em;
 }
 .Order .items {
-  border: 1px solid #d9f7a2;
+  border: 1px solid #8964af ;
   border-radius: 0.3em;
   padding: 0.3em;
   display: inline-block;
