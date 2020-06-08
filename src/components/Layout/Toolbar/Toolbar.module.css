@@ -5,9 +5,8 @@
 .Toolbar {
   display: flex;
   justify-content: space-between;
-  min-height: 30px;
-  
-  background-color: #bcf15a;
+ 
+  background-color: #dfd4eb;
 }
 .Toolbar nav {
   display: none;
