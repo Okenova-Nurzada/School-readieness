@@ -2,21 +2,14 @@ import React from "react";
 import Button from "../../UI/Button/Button";
 import classes from "./OrderSummary.module.css";
 
-const LABELS = {
-  pencil: "Pencil",
-  notebook: "Notebook",
-  pen: "Pen",
-  eraser: "Eraser",
-  ruler: "Ruler",
-  scissors: "Scissors",
-};
+
 
 export default ({ items, cancelOrder, finishOrder }) => {
   const itemsOutput = Object.keys(items)
-    .filter((item) => items[item] > 0)
+  .filter((item) => items[item].quantity > 0)
     .map((item) => (
       <li key={items}>
-        {LABELS[item]}:{items[item]}
+        {items[item].label}: {items[item].quantity}
       </li>
     ));
   return (
