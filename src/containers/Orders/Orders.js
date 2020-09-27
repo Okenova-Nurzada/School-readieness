@@ -6,7 +6,7 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 export default withErrorHandler(() => {
-  const [orders, setOrders] = useState(false);
+  const [orders, setOrders] = useState(null);
 
   useEffect(() => {
     axios
@@ -18,14 +18,13 @@ export default withErrorHandler(() => {
   }, []);
 
   let ordersOutput = <Spinner />;
-  if (orders) {
+  if (orders !==null) {
+    console.log(orders);
     ordersOutput = Object.keys(orders).map((id) => (
       <Order key={id} {...orders[id]} />
     ));
   }
-  if (orders === null) {
-    ordersOutput = <h3>No orders found</h3>;
-  }
+  
 
   return (
     <div className={classes.Orders}>

@@ -10,12 +10,19 @@ export default ({ price, items, details }) => {
     </span>
   ));
 
+  const detailsOutput = (
+    <div className={classes.details}>
+      {details
+        ? details.name + ", " + details.phone + ", " + details.address
+        : "No details available"}
+    </div>
+  );
+
+
   return (
     <div className={classes.Order}>
-      <div className={classes.details}>
-        {details.name}, {details.phone}, {details.address}
-      </div>
-      <div className={classes.price}>{price} som</div>
+     {detailsOutput}
+     <div className={classes.price}>{price.toFixed(2)} som</div>
       <div className={classes.items}>{itemsOutput}</div>
     </div>
   );
