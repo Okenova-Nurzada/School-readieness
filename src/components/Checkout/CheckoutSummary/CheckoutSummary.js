@@ -1,21 +1,23 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import StationeryKit from "../../StationeryBuilder/StationeryKit/StationeryKit";
-import Button from "../../UI/Button/Button";
-import classes from "./CheckoutSummary.module.css";
+ import React from "react";
+ import { Route } from "react-router-dom";
+ import StationeryKit from "../../StationeryBuilder/StationeryKit/StationeryKit";
+ import Button from "../../UI/Button/Button";
+ import classes from "./CheckoutSummary.module.css";
 
-export default ({ price, items, checkoutCancel, checkoutContinue }) => {
+ export default ({ price, items, checkoutCancel, checkoutContinue }) => {
   return (
-    <div className={classes.CheckoutSummary}>
+     <div className={classes.CheckoutSummary}>
       <StationeryKit price={price} items={items} />
-      <Route path="/checkout" exact>
+       <Route path="/checkout" exact>
         <Button click={checkoutCancel} red>
           Cancel
-        </Button>
+       </Button>
         <Button click={checkoutContinue} green>
           Continue
-        </Button>
-      </Route>
+         </Button>
+     </Route>
     </div>
-  );
-};
+   );
+ };
+
+

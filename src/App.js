@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./containers/Layout/Layout";
 
 import StationeryBuilder from "./containers/StationeryBuilder/StationeryBuilder";
-import Checkout from "./containers/Checkout/Checkout";
+import Checkout from "./components/Checkout/Checkout/Checkout";
 import Orders from "./containers/Orders/Orders";
 
 import "./App.css";

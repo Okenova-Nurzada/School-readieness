@@ -1,4 +1,4 @@
-.NavItem  a {
+/* .NavItem  a {
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -17,7 +17,7 @@
 
 .NavItem a:hover {
   border-color: white;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(20, 20, 20);
 }
 .NavItem .active {
   border-color: white;
@@ -29,5 +29,32 @@
     height: 70px;
     border: none;
     border-top: 5px solid transparent;
+  }
+} */
+
+.NavItem a {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  height: 70px;
+  text-decoration: none;
+  font-family: "Sacramento", cursive;;
+  color: rgb(20, 20, 20);
+  font-size: 1.7rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.NavItem a:hover {
+  border-color: rgb(20, 20, 20);
+  background-color: rgba(61, 60, 60, 0.1);
+}
+.NavItem .active {
+  border-color:  white;
+  background-color: rgba(61, 60, 60, 0.1);
+}
+@media (max-width: 660px) {
+  .NavItem a {
+    border: none;
+    border-left: 3px solid transparent;
   }
 }

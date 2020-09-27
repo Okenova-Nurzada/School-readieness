@@ -1,19 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.Toolbar {
+ .Toolbar {
   display: flex;
   justify-content: space-between;
- 
   background-color: #dfd4eb;
+  box-shadow: 0px 0px 12px rgb(128, 127, 127);
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
 }
 .Toolbar nav {
   display: none;
-  
 }
 @media (min-width: 500px) {
   .Toolbar nav {
     display: block;
   }
-}
+} 
+
