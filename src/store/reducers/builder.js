@@ -5,8 +5,6 @@ const initialState = {
   price: 100,
 };
 
-
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_ITEM:
@@ -21,6 +19,7 @@ export default (state = initialState, action) => {
         },
         price: state.price + state.items[action.item].price,
       };
+
     case types.REMOVE_ITEM:
       return {
         ...state,
@@ -31,13 +30,15 @@ export default (state = initialState, action) => {
             quantity: state.items[action.item].quantity - 1,
           },
         },
+        price: state.price - state.items[action.item].price,
       };
-      case types.SET_ITEMS:
-        return {
-          ...state,
-          items: action.items,
-        };
-  
+
+    case types.SET_ITEMS:
+      return {
+        ...state,
+        items: action.items,
+        price: initialState.price,
+      };
 
     default:
       return state;

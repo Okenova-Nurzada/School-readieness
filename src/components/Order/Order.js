@@ -19,10 +19,13 @@ export default ({ price, items, details }) => {
   );
 
 
+
   return (
     <div className={classes.Order}>
-     {detailsOutput}
-     <div className={classes.price}>{price.toFixed(2)} som</div>
+
+      {detailsOutput}
+
+      <div className={classes.price}>{price.toFixed(2)} som </div>
       <div className={classes.items}>{itemsOutput}</div>
     </div>
   );
