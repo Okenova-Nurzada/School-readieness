@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useLocation, Route } from "react-router-dom";
-import axios from "../../../axios";
-import CheckoutSummary from "../CheckoutSummary/CheckoutSummary"
-import CheckoutForm from "../../../components//Checkout/CheckoutForm/CheckoutForm";
-import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
-import Spinner from "../../UI/Spinner/Spinner";
+import React, { useState } from "react";
+import { useHistory, Route } from "react-router-dom";
+import axios from "../../axios";
+import CheckoutSummary from "../../components/Checkout/CheckoutSummary/CheckoutSummary";
+import CheckoutForm from "./CheckoutForm/CheckoutForm";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+import Spinner from "../../components/UI/Spinner/Spinner";
 import { useSelector } from "react-redux";
 import classes from "./Checkout.module.css";
 
 export default withErrorHandler(() => {
   const history = useHistory();
-  const { items, price } = useSelector((state) => state);
+  const { items, price } = useSelector((state) => state.builder);
   const [loading, setLoading] = useState(false);
 
   function checkoutCancel() {

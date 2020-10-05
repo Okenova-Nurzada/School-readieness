@@ -12,7 +12,7 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import classes from "./StationeryBuilder.module.css";
 
 export default withErrorHandler(() => {
-  const { items, price } = useSelector((state) => state);
+  const { items, price } = useSelector((state) => state.builder);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
