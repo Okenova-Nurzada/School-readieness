@@ -1,18 +1,11 @@
-import * as types from "../actions/types";
+import axios from "../../axios";
+import { SET_ORDERS } from "./types";
 
-const initialState = {
-  orders: false,
-};
+export const set = (dispatch, orders) => dispatch({
+  type: SET_ORDERS, orders
+});
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_ORDERS:
-      return {
-        ...state,
-        orders: action.orders
-      };
-
-    default:
-      return state;
-  }
-};
+export const load = (dispatch) => axios
+  .get("/orders.json")
+  .then(({ data }) => set(dispatch, data))
+  .catch(() => {}); 
